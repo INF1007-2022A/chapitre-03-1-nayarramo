@@ -7,35 +7,42 @@ import math
 from numpy import mat
 
 def square_root(a: float) -> float:
-    return math.sqrt(a)
+    result = math.sqrt(a)
+    return result
 
 
 def square(a: float) -> float:
-    return a*a
+    result = a*a
+    return result
 
 
 def average(a: float, b: float, c: float) -> float:
     list = [a,b,c]
-    return sum(list)/len(list)
+    result = sum(list)/len(list)
+    return result
 
 
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return (angle_degs + angle_mins/60 + angle_secs/3600)*(math.pi/180)
+    result = (angle_degs + angle_mins/60 + angle_secs/3600)*(math.pi/180)
+    return result
 
 
 def to_degrees(angle_rads: float) -> tuple:
-    deg = angle_rads*180/math.pi
-    min = (deg-math.floor(deg))*60
-    sec = (min-math.floor(min))*60
-    return math.floor(deg), math.floor(min), math.floor(sec)
+    degrees = math.degrees(angle_rads)
+    minutes = (degrees - math.floor(degrees)) * 60
+    seconds = (minutes-math.floor(minutes)) * 60
+
+    return degrees - minutes, minutes - seconds, seconds
 
 
 def to_celsius(temperature: float) -> float:
-    return (temperature-32)/1.8
+    result = (temperature-32)/1.8
+    return result
 
 
 def to_farenheit(temperature: float) -> float:
-    return temperature*1.8+32
+    result = temperature*1.8+32
+    return result
 
 
 def main() -> None:
